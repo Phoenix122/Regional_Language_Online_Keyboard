@@ -1,0 +1,139 @@
+<html>
+<head>
+<script  src="KeyboardJS.js" type="text/javascript"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('button').mouseover(function(){ $(this).fadeTo('slow',0.5);});
+$('button').mouseout(function(){ $(this).fadeTo('fast',1);});
+	$('button').click(function(){ $(this).fadeTo('fast',1);});
+    });
+</script>
+<style type="text/css">
+button
+{
+font-size:125%;
+border:0.005 px;
+background-color:white;
+
+border-color:black;
+border-radius:2px;
+}
+
+.multitext
+{
+	border-style:outset;
+	min-height:200px;
+	max-height:200px;
+	min-width:100%;
+	max-width:100%;
+	font-size:50px;
+	border-color:blue; 
+	border-width=5px;
+	background-color:white;
+}
+
+.divButton
+{
+	background-color: white;
+}
+
+</style>
+</head>
+
+<body >
+
+<textarea cols="50" rows="5" name="inputBox" id="tb1" readonly class="multitext"></textarea>
+<br/>
+<br/>
+<div class="divButton">
+<button name="miscellaneous" type="button" id="visarga" value="0B83" onclick="getInput(this.value)">&#x0B83;</button>
+<button   name="miscellaneous" type="button" id="anusvara" value="0B82" onclick="getInput(this.value)">&#x0B82;</button>
+<button   name="miscellaneous" type="button" id="virama" value="0BCD" onclick="getInput(this.value)">&#x0BCD;</button>
+<button   name="miscellaneous" type="button" id="om" value="0BD0" onclick="getInput(this.value)">&#x0BD0;</button>
+<button   name="miscellaneous" type="button" id="au length mark" value="0BD7" onclick="getInput(this.value)">&#x0BD7;</button>
+<button   name="vowel_letter" type="button" id="aha" value="0c02" onclick="getInput(this.value)">&#x0c02;</button>
+<button   name="bspace" type="button" id="bspace" value="0008" onclick="backSpace()"><-</button>
+<button   name="reset" type="reset" id="reset"  onclick="reset()">Reset</button>
+<button   name="Space" type="button" id="space" value="0020" onclick="getInput(this.value)">Space</button>
+<button   name="Space" type="button" id="tha-othu" value="0c56" onclick="getInput(this.value)">&#x0c56;</button>
+<br/>
+<br/>
+
+<button  name="vowel_letter" type="button" id="a-vl" value="0B85" onclick="getInput(this.value)">&#x0B85;</button>
+<button name="vowel_letter" type="button" id="aa-vl" value="0B86" onclick="getInput(this.value)">&#x0B86;</button>
+<button name="vowel_letter" type="button" id="i-vl" value="0B87" onclick="getInput(this.value)">&#x0B87;</button>
+<button name="vowel_letter" type="button" id="ii-vl" value="0B88" onclick="getInput(this.value)">&#x0B88;</button>
+<button name="vowel_letter" type="button" id="u-vl" value="0B89" onclick="getInput(this.value)">&#x0B89;</button>
+<button name="vowel_letter" type="button" id="uu-vl" value="0B8A" onclick="getInput(this.value)">&#x0B8A;</button>
+<button name="vowel_letter" type="button" id="e-vl" value="0B8E" onclick="getInput(this.value)">&#x0B8E;</button>
+<button name="vowel_letter" type="button" id="ee-vl" value="0B8F" onclick="getInput(this.value)">&#x0B8F;</button>
+<button name="vowel_letter" type="button" id="ai-vl" value="0B90" onclick="getInput(this.value)">&#x0B90;</button>
+<button name="vowel_letter" type="button" id="o-vl" value="0B92" onclick="getInput(this.value)">&#x0B92;</button>
+<button name="vowel_letter" type="button" id="oo-vl" value="0B93" onclick="getInput(this.value)">&#x0B93;</button>
+<button name="vowel_addons" type="button" id="au" value="0B94" onclick="getInput(this.value)">&#x0B94;</button>
+
+
+<br/>
+<br/>
+<button name="vowel_addons" type="button" id="aa" value="0BBE" onclick="getInput(this.value)">&#x0BBE;</button>
+<button name="vowel_addons" type="button" id="i" value="0BBF" onclick="getInput(this.value)">&#x0BBF;</button>
+<button name="vowel_addons" type="button" id="ii" value="0BC0" onclick="getInput(this.value)">&#x0BC0;</button>
+<button name="vowel_addons" type="button" id="u" value="0BC1" onclick="getInput(this.value)">&#x0BC1;</button>
+<button name="vowel_addons" type="button" id="uu" value="0BC2" onclick="getInput(this.value)">&#x0BC2;</button>
+<button name="vowel_addons" type="button" id="e" value="0BC6" onclick="getInput(this.value)">&#x0BC6;</button>
+<button name="vowel_addons" type="button" id="ee" value="0BC7" onclick="getInput(this.value)">&#x0BC7;</button>
+<button name="vowel_addons" type="button" id="ai" value="0BC8" onclick="getInput(this.value)">&#x0BC8;</button>
+<button name="vowel_addons" type="button" id="o" value="0BCA" onclick="getInput(this.value)">&#x0BCA;</button>
+<button name="vowel_addons" type="button" id="oo" value="0BCB" onclick="getInput(this.value)">&#x0BCB;</button>
+<button name="vowel_addons" type="button" id="au" value="0BCC" onclick="getInput(this.value)">&#x0BCC;</button>
+<br/>
+<br/>
+
+<button name="consonant_letter" type="button" id="ka" value="0B95" onclick="getInput(this.value)">&#x0B95;</button>
+<button name="consonant_letter" type="button" id="nga" value="0B99" onclick="getInput(this.value)">&#x0B99;</button>
+<button name="consonant_letter" type="button" id="ca" value="0B9A" onclick="getInput(this.value)">&#x0B9A;</button>
+<button name="consonant_letter" type="button" id="ja" value="0B9C" onclick="getInput(this.value)">&#x0B9C;</button>
+<button name="consonant_letter" type="button" id="nya" value="0B9E" onclick="getInput(this.value)">&#x0B9E;</button>
+<br/>
+<br/>
+<button name="consonant_letter" type="button" id="tta" value="0B9F" onclick="getInput(this.value)">&#x0B9F;</button>
+<button name="consonant_letter" type="button" id="nna" value="0BA3" onclick="getInput(this.value)">&#x0BA3;</button>
+<button name="consonant_letter" type="button" id="ta" value="0BA4" onclick="getInput(this.value)">&#x0BA4;</button>
+<button name="consonant_letter" type="button" id="na" value="0BA8" onclick="getInput(this.value)">&#x0BA8;</button>
+<button name="consonant_letter" type="button" id="nnna" value="0BA9" onclick="getInput(this.value)">&#x0BA9;</button>
+<br/>
+<br/>
+<button name="consonant_letter" type="button" id="pa" value="0BAA" onclick="getInput(this.value)">&#x0BAA;</button>
+<button name="consonant_letter" type="button" id="ma" value="0BAE" onclick="getInput(this.value)">&#x0BAE;</button>
+<button name="consonant_letter" type="button" id="ya" value="0BAF" onclick="getInput(this.value)">&#x0BAF;</button>
+<button name="consonant_letter" type="button" id="ra" value="0BB0" onclick="getInput(this.value)">&#x0BB0;</button>
+<button name="consonant_letter" type="button" id="rra" value="0BB1" onclick="getInput(this.value)">&#x0BB1;</button>
+<br/>
+<br/>
+
+
+<button name="consonant_letter" type="button" id="la" value="0BB2" onclick="getInput(this.value)">&#x0BB2;</button>
+<button name="consonant_letter" type="button" id="lla" value="0BB3" onclick="getInput(this.value)">&#x0BB3;</button>
+<button name="consonant_letter" type="button" id="llla" value="0BB4" onclick="getInput(this.value)">&#x0BB4;</button>
+<button name="consonant_letter" type="button" id="va" value="0BB5" onclick="getInput(this.value)">&#x0BB5;</button>
+<button name="consonant_letter" type="button" id="sha" value="0BB6" onclick="getInput(this.value)">&#x0BB6;</button>
+<br/>
+<br/>
+<button name="consonant_letter" type="button" id="ssa" value="0BB7" onclick="getInput(this.value)">&#x0BB7;</button>
+<button name="consonant_letter" type="button" id="sa" value="0BB8" onclick="getInput(this.value)">&#x0BB8;</button>
+<button name="consonant_letter" type="button" id="ha" value="0BB9" onclick="getInput(this.value)">&#x0BB9;</button>
+
+<br/>
+<br/>
+
+</div>
+
+
+
+</body>
+
+
+
+
+</html>
